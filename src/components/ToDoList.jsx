@@ -1,36 +1,42 @@
 import { useState } from "react";
 import ToDoTask from "./ToDoTask";
 
+class tasks {
+    constructor(id, name, deadline) {
+        this.id = id,
+        this.name = name,
+        this.deadline = deadline
+    }
+
+    getTask(){
+        return{
+            id: this.id,
+            name: this.name,
+            deadline: this.deadline
+        }
+    }
+}
+
 function ToDoList(){
 
     const [taskName, setTaskName] = useState('')
     const [deadline, setDeadline] = useState()
 
-    // const tasksArray = []
-    // const [tasksList, setTasksList] = useState(tasksArray)
-
-    // const task = {
-    //     name: '',
-    //     deadline: null
-    // }
-
     function handleTaskName(e){
         setTaskName(e.target.value)
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     function handleDeadlineChange(e){
         setDeadline(e.target.value)
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     function handleAddTask(){
-        // task.name = taskName
-        // task.deadline = deadline
-
-        // tasksArray.push(task)
-
-        // setTasksList(tasksArray)
+        // task is created.
+        console.log('add task button is clicked...')
+        const task1 = new tasks(taskName, taskName, deadline)
+        console.log( task1.getTask() )
     }
 
     return(
