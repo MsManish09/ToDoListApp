@@ -74,11 +74,14 @@ function ToDoList(){
         localStorage.setItem('tasksListArray', JSON.stringify(task));
     }, [task])
 
+    // delete functionality using the task id
     function DeleteTask(TaskID){
         console.log(TaskID)
-        let taskToDelete = task.find((t)=> t.id == TaskID )
+        // let taskToDelete = task.find((t)=> t.id == TaskID )
         // console.log('delete task function')
         // console.log(taskToDelete)
+
+        // create a new task list excluding the task that is to be deleted and update the local storage.
         let newTaskListAfterDeletion = task.filter((t)=> t.id != TaskID)
         setTask(newTaskListAfterDeletion)
     }

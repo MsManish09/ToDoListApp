@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 function ToDoTask({tasks, taskCompletion, DeleteTask}){
 
     const inCompletetask = tasks.filter(task => !task.isComplete);
-
     console.log(inCompletetask)
     console.log('todotask component', tasks)
 
