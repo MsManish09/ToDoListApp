@@ -74,6 +74,16 @@ function ToDoList(){
         localStorage.setItem('tasksListArray', JSON.stringify(task));
     }, [task])
 
+    function DeleteTask(TaskID){
+        console.log(TaskID)
+        let taskToDelete = task.find((t)=> t.id == TaskID )
+        // console.log('delete task function')
+        // console.log(taskToDelete)
+        let newTaskListAfterDeletion = task.filter((t)=> t.id != TaskID)
+        setTask(newTaskListAfterDeletion)
+    }
+
+
     return(
         <div  className=" font-mono mb-8  " >
 
@@ -99,7 +109,7 @@ function ToDoList(){
                 <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 text-blue-800 " >Active Tasks</h1>
 
                 <div id="tasksContainer" className=" flex flex-col justify-center items-center p-4 gap-2 "  >
-                    <ToDoTask tasks={task} taskCompletion={taskCompletion} />
+                    <ToDoTask tasks={task} taskCompletion={taskCompletion} DeleteTask={DeleteTask} />
                 </div>
             </section>
 

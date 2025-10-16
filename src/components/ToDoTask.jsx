@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function ToDoTask({tasks, taskCompletion}){
+function ToDoTask({tasks, taskCompletion, DeleteTask}){
 
     const inCompletetask = tasks.filter(task => !task.isComplete);
 
@@ -32,13 +32,13 @@ function ToDoTask({tasks, taskCompletion}){
                     <input type='checkbox' id={task.id} className=" w-[25px] h-[25px] rounded-full " onChange={handleCompletion}  />
                     
                     <div id="taskDetails" className=" flex flex-col justify-center items-center  " >
-                        <input type="text" className=" text-center text-[1rem] font-bold p-2 pl-2  " value={task.name} />
+                        <input type="text" className=" text-center text-[1rem] font-bold p-2 pl-2  " value={task.name}  />
                         <input type='date' className=" text-gray-600 italic " value={task.deadline} ></input>
                     </div>
 
                     <div id="buttonContainer" className=" flex gap-2  flex-wrap " >
                         <button id={task.id} className=' bg-blue-500 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' >Edit</button>
-                        <button id={task.id} className=' bg-red-400 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 '  >Delete</button>
+                        <button id={task.id} className=' bg-red-400 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' onClick={(e)=>{DeleteTask(task.id)}}  >Delete</button>
                     </div>
                 </div>
             )

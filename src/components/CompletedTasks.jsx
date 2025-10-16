@@ -4,8 +4,6 @@ import { SiTicktick } from "react-icons/si";
 function CompletedTasks({tasks}){
 
     const completedTask = tasks.filter(task => task.isComplete == true );
-    let count = 1;
-
     console.log(completedTask)
     console.log('completed component', completedTask)
 
