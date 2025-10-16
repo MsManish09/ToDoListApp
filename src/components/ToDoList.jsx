@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ToDoTask from "./ToDoTask";
 
 
 function ToDoList(){
 
     const [taskName, setTaskName] = useState('')
-    const [deadline, setDeadline] = useState()
-    const [task, setTask] = useState([])
+    const [deadline, setDeadline] = useState('')
+
+    // creating a state to store task lists -> get the list from local storage to view across sessions.
+    const [task, setTask] = useState(()=>{
+        let list = localStorage.getItem('tasksListArray') 
+        if(list){
+            return JSON.parse(list)
+        }
+        else{
+            return []
+        }
+    }) // store this in local storage
 
     function handleTaskName(e){
         setTaskName(e.target.value)
@@ -24,8 +34,20 @@ function ToDoList(){
         // const task1 = new tasks(taskName, taskName, deadline)
         const newTask = { id: taskName, name: taskName, deadline, isComplete: false };
 
-        console.log( newTask )
+        //add new task at the 0th index
+        const updateTasklist = [newTask, ...task];
+    
+        // update the state
+        setTask(updateTasklist)
+        
+        //store the updated state in local storage
+        localStorage.setItem('tasksListArray', JSON.stringify(updateTasklist))
+        
     }
+
+    useEffect(()=>{
+        localStorage.setItem('tasksListArray', JSON.stringify(task));
+    }, [task])
 
     return(
         <div  className=" font-mono  " >
