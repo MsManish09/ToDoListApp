@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ToDoTask from "./ToDoTask";
+import CompletedTasks from "./CompletedTasks";
 
 
 function ToDoList(){
@@ -95,7 +96,7 @@ function ToDoList(){
 
             <div className=" flex gap-4 justify-center mt-6 flex-wrap "  >
                 <section id= 'CurrenttasksContainer' className=" bg-blue-100 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col " >
-                <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 " >Active Tasks</h1>
+                <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 text-blue-800 " >Active Tasks</h1>
 
                 <div id="tasksContainer" className=" flex flex-col justify-center items-center p-4 "  >
                     <ToDoTask tasks={task} taskCompletion={taskCompletion} />
@@ -103,7 +104,11 @@ function ToDoList(){
             </section>
 
             <section id= 'completedTasksContainer' className=" bg-green-100 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col " >
-                <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 " >Completed Tasks</h1>
+                <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 text-green-800 " >Completed Tasks</h1>
+
+                <div id="tasksContainer" className=" flex flex-col justify-center items-center p-4 "  >
+                    <CompletedTasks tasks={task}  />
+                </div>
             </section>
             </div>
             
