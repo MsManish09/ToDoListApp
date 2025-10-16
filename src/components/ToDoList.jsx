@@ -29,6 +29,15 @@ function ToDoList(){
     }
 
     function handleAddTask(){
+
+        // if task name and deadline is empty, send a warning and reload.
+        if(!taskName || !deadline){
+            alert('Enter the task name and deadline')
+            // reload page
+            location.reload()
+            return
+        }
+
         // task is created.
         console.log('add task button is clicked...')
         // const task1 = new tasks(taskName, taskName, deadline)
@@ -39,13 +48,28 @@ function ToDoList(){
     
         // update the state
         setTask(updateTasklist)
-        
+
         //store the updated state in local storage
-        localStorage.setItem('tasksListArray', JSON.stringify(updateTasklist))
-        
+        localStorage.setItem('tasksListArray', JSON.stringify(updateTasklist))  
+    }
+
+    // task completion functionlity
+    function taskCompletion(id){
+
+        const updatedList = task.map((task)=>{
+            if(task.id == id){
+                task.isComplete = true
+            }
+            return task
+        })
+
+        // update the task state and store in local storage
+        setTask(updatedList)
+        localStorage.setItem('tasksListArray', JSON.stringify(task))
     }
 
     useEffect(()=>{
+        // every time the task list chnages, update the task in local storage.
         localStorage.setItem('tasksListArray', JSON.stringify(task));
     }, [task])
 
@@ -74,7 +98,7 @@ function ToDoList(){
                 <h1 className=" text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 " >Active Tasks</h1>
 
                 <div id="tasksContainer" className=" flex flex-col justify-center items-center p-4 "  >
-                    <ToDoTask />
+                    <ToDoTask tasks={task} taskCompletion={taskCompletion} />
                 </div>
             </section>
 
