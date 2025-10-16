@@ -7,7 +7,6 @@ function CompletedTasks({tasks}){
     console.log(completedTask)
     console.log('completed component', completedTask)
 
-    
 
     if(completedTask.length == 0){
         return <h1 className=' flex flex-wrap text-center ' >Nothing done yet—let's get started!</h1>
@@ -15,6 +14,7 @@ function CompletedTasks({tasks}){
 
     return(
         completedTask.map((task, index)=>{
+            // limit the completed tasks list to 5, with the latest task being at the top
             if(index >= 5 ){
                 return
             }

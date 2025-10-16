@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 function ToDoTask({tasks, taskCompletion, DeleteTask}){
 
+    //  to only obtain task that are yet to be completed.
     const inCompletetask = tasks.filter(task => !task.isComplete);
     console.log(inCompletetask)
     console.log('todotask component', tasks)
