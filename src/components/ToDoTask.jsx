@@ -27,19 +27,27 @@ function ToDoTask({tasks, taskCompletion, DeleteTask}){
         inCompletetask.map((task, index)=>{
             
             return(
-                <div className=" flex border-2 border-solid border-gray-50 p-2 justify-evenly items-center gap-4 w-[90%] rounded-[15px] bg-blue-200 flex-wrap " key={task.id} >
-                    <h1 id='taskId' className=" text-[1.2rem] font-bold " > { index + 1 } </h1>
+                <div className=" taskContainer flex flex-wrap gap-2 justify-center items-center w-[100%] bg-blue-300 rounded-[10px] border-2 border-solid border-gray-100 p-2  " key={task.id} >
+
+                    <h1 id='taskId' className=" text-[1.2rem] font-bold " > { index + 1 }. </h1>
+
                     <input type='checkbox' id={task.id} className=" w-[25px] h-[25px] rounded-full " onChange={handleCompletion}  />
                     
-                    <div id="taskDetails" className=" flex flex-col justify-center items-center  " >
-                        <input type="text" className=" text-center text-[1rem] font-bold p-2 pl-2  " value={task.name}  />
-                        <input type='date' className=" text-gray-600 italic " value={task.deadline} ></input>
+                    <div id="taskDetails" className=" flex flex-row sm:flex sm:flex-row justify-around items-center  " >
+
+                        <div className=" flex flex-col justify-center items-center mb-1 " >
+                            <input type="text" className=" text-center text-[1rem] font-bold p-1 " value={task.name}  />
+
+                            <input type='date' className=" text-gray-600 italic text-[.8rem] " value={task.deadline} />
+                        </div>
+
+                        <div id="buttonContainer" className=" flex gap-2  flex-wrap " >
+                            {/* <button id={task.id} className=' bg-blue-500 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' >Edit</button> */}
+                            <button id={task.id} className=' bg-red-400 p-1 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' onClick={(e)=>{DeleteTask(task.id)}}  >Delete</button>
+                        </div>
                     </div>
 
-                    <div id="buttonContainer" className=" flex gap-2  flex-wrap " >
-                        <button id={task.id} className=' bg-blue-500 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' >Edit</button>
-                        <button id={task.id} className=' bg-red-400 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' onClick={(e)=>{DeleteTask(task.id)}}  >Delete</button>
-                    </div>
+                    
                 </div>
             )
         } )
