@@ -1,6 +1,9 @@
-#Introduction: - This is a simple React-based Todo List application that allows users to manage their tasks with deadlines, mark them as complete, and delete them.
+#React To Do App:
 
-    - The app uses React's useState  hooks to manage state and persist data in the browser's localStorage, ensuring that tasks are retained across session
+    ##Introduction:
+        - This is a simple React-based Todo List application that allows users to manage their tasks with deadlines, mark them as complete, and delete them.
+
+        - The app uses React's useState  hooks to manage state and persist data in the browser's localStorage, ensuring that tasks are retained across session
 
 
     ## Features:
