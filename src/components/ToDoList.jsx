@@ -39,8 +39,7 @@ function ToDoList(){
         // if task name and deadline is empty, send a warning and reload.
         if(!taskName || !deadline){
             alert('Enter the task name and deadline')
-            // reload page
-            location.reload()
+            // return
             return
         }
 
