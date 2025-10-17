@@ -10,11 +10,14 @@ function ToDoTask({tasks, taskCompletion, DeleteTask}){
     console.log('todotask component', tasks)
 
     function handleCompletion(e){
-        console.log(e.target.id)
-        // e.id.isComplete = true 
+        setTimeout(() => {
+            console.log(e.target.id)
+            // e.id.isComplete = true 
 
-        // update isComplete property of the task, set the task.id to parent component to chnage.
-        taskCompletion(e.target.id)
+            // update isComplete property of the task, set the task.id to parent component to chnage.
+            taskCompletion(e.target.id)
+        }, 300);
+        
     }
 
     // useEffect(()=>{
