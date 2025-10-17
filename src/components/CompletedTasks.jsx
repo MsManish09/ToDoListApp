@@ -20,7 +20,7 @@ function CompletedTasks({tasks}){
             }
             return(
                 
-                <div className=" taskContainer flex border-2 border-solid border-gray-50 p-2 pl-6 pr-6 justify-between items-center gap-4 w-[80%] rounded-[15px] bg-green-200 flex-wrap " key={task.id} >
+                <div className=" taskContainer flex border-2 border-solid border-gray-50 p-2 pl-6 pr-6 justify-between items-center gap-4 w-[80%] rounded-[15px] bg-green-300 flex-wrap " key={task.id} >
                     
                     <h1 id='taskId' className=" text-[1.2rem] font-bold " > {index + 1} </h1>
                 

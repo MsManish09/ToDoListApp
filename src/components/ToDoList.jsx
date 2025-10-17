@@ -113,7 +113,7 @@ function ToDoList(){
             </div>
 
             <div className=" flex gap-2 justify-center mt-6 flex-wrap "  >
-                <section id= 'CurrenttasksContainer' className=" bg-blue-100 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col " >
+                <section id= 'CurrenttasksContainer' className=" bg-blue-200 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col border-1 border-solid border-blue-500 " >
                     <h1 className=" flex justify-center gap-1 items-center text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 text-blue-800 " >Active Tasks <MdOutlinePendingActions /></h1>
 
                     <div id="tasksContainer" className=" flex flex-col justify-center items-center p-2 gap-2 "  >
@@ -121,7 +121,7 @@ function ToDoList(){
                     </div>
                 </section>
 
-                <section id= 'completedTasksContainer' className=" bg-green-100 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col " >
+                <section id= 'completedTasksContainer' className=" bg-green-200 w-[40%] h-[40%] min-w-[350px] flex p-4 flex-col border-1 border-solid border-green-500 " >
                     <h1 className=" flex justify-center items-center gap-1 text-center text-[1.7rem] font-bold underline border-b-2 pb-2 border-solid border-gray-50 text-green-800 " >Completed Tasks <TiTickOutline /> </h1>
 
                     <div id="tasksContainer" className=" flex flex-col justify-center items-center p-2 gap-2 "  >
