@@ -29,7 +29,7 @@ function ToDoTask({tasks, taskCompletion, DeleteTask}){
         inCompletetask.map((task, index)=>{
             
             return(
-                <div className=" taskContainer flex flex-wrap gap-2 justify-center items-center w-[100%] bg-blue-300 rounded-[10px] border-2 border-solid border-gray-100 p-2  " key={task.id} >
+                <div className=" taskContainer flex flex-wrap gap-2 justify-center items-center w-[100%] bg-blue-300 rounded-[10px] border-2 border-solid border-gray-100 p-2   " key={task.id} >
 
                     <h1 id='taskId' className=" text-[1.2rem] font-bold " > { index + 1 }. </h1>
 
