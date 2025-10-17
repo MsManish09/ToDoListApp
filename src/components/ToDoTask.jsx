@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { MdDelete } from "react-icons/md";
+
 
 function ToDoTask({tasks, taskCompletion, DeleteTask}){
 
@@ -43,7 +45,7 @@ function ToDoTask({tasks, taskCompletion, DeleteTask}){
 
                         <div id="buttonContainer" className=" flex gap-2  flex-wrap " >
                             {/* <button id={task.id} className=' bg-blue-500 p-2 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' >Edit</button> */}
-                            <button id={task.id} className=' bg-red-400 p-1 rounded-[10px] font-semibold shadow-2xs shadow-black hover:scale-95 ' onClick={(e)=>{DeleteTask(task.id)}}  >Delete</button>
+                            <MdDelete id={task.id} className=' w-[30px] h-[30px] bg-red-400 p-1 rounded-[10px] font-semibold shadow-2xs shadow-white hover:scale-95 text-white ' onClick={(e)=>{DeleteTask(task.id)}}  ></MdDelete>
                         </div>
                     </div>
 
